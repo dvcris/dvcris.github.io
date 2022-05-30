@@ -1,0 +1,28 @@
+@use '../../../commons/global.scss' as g;
+
+.details__text {
+  display: block;
+  color: g.$lightest;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  font-size: g.$xs;
+  background-color: g.$darkest;
+  padding: g.$xs;
+}
+
+.details__img {
+  max-height: 100%;
+  background-color: g.$lightest;
+}
+
+@media screen and (max-width: #{g.$xs-resolution}) {
+  .details__img {
+    border-radius: 100%;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,69 @@
+@use '../../../commons/global.scss' as g;
+
+$proportion: 85%;
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__links {
+  display: flex;
+  width: $proportion;
+}
+
+.navbar__options {
+  display: flex;
+  width: 100% - $proportion;
+  justify-content: flex-end;
+  
+  > button {
+    margin: g.$spacing-xs;
+  }
+}
+
+.link {
+  color: g.$white;
+  font-size: 0.75rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: #{g.$xs-resolution}) {
+  $xs-proportion: 70%;
+
+  .navbar__links {
+    width: $xs-proportion;
+  }
+
+  .navbar__options {
+    width: 100% - $xs-proportion;
+  }
+
+  .navbar__options > button {
+    margin: g.$spacing-xs;
+  }
+
+  .link {
+    margin-left: g.$lg;
+    text-align: center;
+    text-shadow: 0 0 g.$sm hsl(0deg 0% 35%);
+  }
+}
+
+@media screen and (min-width: #{g.$sm-resolution}) {
+  .link {
+    font-size: g.$spacing-xs;
+    margin-left: g.$spacing-sm;
+  }
+
+  .navbar__options > button {
+    margin: g.$spacing-xs;
+  }
+}
+
+@media screen and (min-width: #{g.$sm-resolution + 1}) {
+  .link {
+    font-size: g.$spacing-sm;
+    margin-left: g.$spacing-md;
+  }
+}

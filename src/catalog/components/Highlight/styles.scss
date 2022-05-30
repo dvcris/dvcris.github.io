@@ -1,0 +1,93 @@
+@use '../../../commons/global.scss' as g;
+
+.highlight {
+  display: grid;
+  height: 60vh;
+  justify-content: center;
+  grid-template-rows: 6fr 1fr 2fr;
+  align-items: end;
+
+  > * {
+    color: g.$lightest;
+  }
+}
+
+.highlight__text {
+  text-transform: capitalize;
+}
+
+.highlight__title {
+  font-size: g.$lg;
+  font-family: 'Trebuchet MS', monospace;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.highlight__description {
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.highlight__actions {
+  display: flex;
+}
+
+.highlight__buttons {
+  display: flex;
+  flex-flow: row;
+}
+
+.highlight__dropdown {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  
+  select {
+    font-family: g.$font-family;
+    padding: g.$nn g.$lg;
+    margin-left: g.$nn;
+    border: none;
+    border-radius: g.$nn;
+    color: g.$lightest;
+    background-color: g.$darkest;
+    opacity: 0.6;
+  }
+}
+
+@media screen and (max-width: #{g.$xs-resolution}) {
+  .highlight > * {
+    text-align: center;
+  }
+
+  .highlight__buttons {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: #{g.$xs-resolution + 1}) {
+  .highlight {
+    height: 40vh;
+    margin: auto 1.25rem;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+  
+  .highlight__title {
+    font-size: g.$lg * 1.25;
+    width: 70%;
+  }
+
+  .highlight__description {
+    width: 70%;
+    padding: g.$sm 0;
+  }
+
+  .highlight__buttons {
+    height: g.$xl;
+    align-self: flex-end;
+  
+    > * {
+      width: g.$lg * 5;
+      margin-left: g.$nn;
+    }
+  }
+}
